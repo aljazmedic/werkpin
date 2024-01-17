@@ -7,10 +7,10 @@ The crucial part is providing an executable, that will read remote files. It sho
 It should work like `cat` command on the local machine.
 
 ```bash
-# If you would read like that:
-$ leak_web.sh <filename>
-# You can specify it like that:
-$ werkpin.py  --leak ... -fr './leak_web.sh'
+# Your file read script should accept file as first argument:
+$ ./leak_file_from_server.sh <filename>
+# Then use it in script as follows:
+$ werkpin.py  --leak ... -fr './leak_file_from_server.sh'
 ```
 
 The program knows to execute it with different filenames as arguments during the calculataion process.
